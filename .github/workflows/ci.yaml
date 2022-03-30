@@ -16,24 +16,9 @@ concurrency:
 
 jobs:
 
-  prereqs:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-
-      - name: Check out code into the Go module directory
-        uses: actions/checkout@v1
-
-      - name: Prepare Host
-        run: |
-          curl -sLS https://get.arkade.dev | sudo sh
-          arkade get kubectl
-          sudo mv $HOME/.arkade/bin/kubectl /usr/local/bin
-
   kubernetes:
     name: Kubernetes
-    runs-on: self-hosted
-    needs: prereqs
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         k8s: [v1.16.15, v1.18.19, v1.19.11, v1.20.7, v1.21.2, v1.22.4, v1.23.3]
