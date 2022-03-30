@@ -38,3 +38,4 @@ jobs:
           kubectl wait --for=condition=Ready nodes --all --timeout=5m
           kubectl get nodes
           kubectl create -R -f ./crds
+
