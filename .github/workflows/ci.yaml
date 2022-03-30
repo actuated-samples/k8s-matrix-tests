@@ -18,7 +18,7 @@ jobs:
 
   prereqs:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
 
       - name: Check out code into the Go module directory
@@ -32,7 +32,7 @@ jobs:
 
   kubernetes:
     name: Kubernetes
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: prereqs
     strategy:
       matrix:
