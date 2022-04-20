@@ -15,7 +15,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-
   kubernetes:
     name: Kubernetes
     runs-on: actuated
